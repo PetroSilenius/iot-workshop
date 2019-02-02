@@ -10,7 +10,7 @@
 #define I2C_ADDR 0x76
 #define SSID ""  //Wifi name
 #define PASSWD ""       //Wifi password 
-#define IP "http://192.168.11.6:3001/newreading"  //Server IP
+#define IP "http://192.168.43.7:3001/api/newreading"  //Server IP
 #define NAME "Saa-asema"
 
 ESP8266WiFiMulti WiFiMulti;
