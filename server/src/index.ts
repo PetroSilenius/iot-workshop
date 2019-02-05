@@ -1,6 +1,6 @@
 import express, {Request, Response} from 'express';
 import bodyParser from 'body-parser';
-import { assertReading} from "./util";
+import { assertReading } from "./util";
 import { insertReading, getSensors, getReadings } from './dbUtils';
 
 const app = express();
@@ -29,9 +29,9 @@ app.get('/api/getsensors', (req: Request, res: Response) => {
         .catch(err => res.status(500).send(err));
 });
 
-app.get('/api/getreadings', (req: Request, res: Response) => {
+app.get('/api/getreadings/:limit', (req: Request, res: Response) => {
     console.log('Received getreadings request');
-    getReadings(req.params.noOfReadings)
+    getReadings(req.params.limit)
         .then(readings => res.send(readings))
         .catch(err => res.status(500).send(err));
 });

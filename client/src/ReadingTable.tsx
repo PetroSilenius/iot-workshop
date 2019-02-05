@@ -46,15 +46,15 @@ class ReadingTable extends Component<{}, State> {
                 </thead>
                 <tbody>
                 {
-                    data.map(({ sensorname, temperature, pressure, humidity, timestamp }) => {
-                    <tr key={`${sensorname}-${timestamp}`}>
-                        <td>{this.formatDate(timestamp)}</td>
-                        <td>{sensorname}</td>
-                        <td>{temperature} °C</td>
-                        <td>{pressure} hPa</td>
-                        <td>{humidity} %</td>
-                    </tr>
-                    })
+                    data.map(({ sensorname, temperature, pressure, humidity, timestamp }) => (
+                        <tr key={`${sensorname}-${timestamp}`}>
+                            <td>{this.formatDate(timestamp)}</td>
+                            <td>{sensorname}</td>
+                            <td>{temperature} °C</td>
+                            <td>{pressure} hPa</td>
+                            <td>{humidity} %</td>
+                        </tr>
+                    ))
                 }
                 </tbody>
             </Table>
